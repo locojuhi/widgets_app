@@ -26,8 +26,34 @@ class _HomeView extends StatelessWidget {
       itemCount: appMenuItems.length,
       itemBuilder: (context, index){
         final menuItem = appMenuItems[index];
+        return _CustomListTile(menuItem: menuItem);
         return Text(menuItem.title);
       }
+    );
+  }
+}
+
+class _CustomListTile extends StatelessWidget {
+  const _CustomListTile({
+    super.key,
+    required this.menuItem,
+  });
+
+  final MenuItem menuItem;
+
+  @override
+  Widget build(BuildContext context) {
+
+    final colors = Theme.of(context).colorScheme;
+
+    return ListTile(
+      title: Text(menuItem.title),
+      subtitle: Text(menuItem.subTitle),
+      leading: Icon(menuItem.icon, color: colors.primary,),
+      trailing: Icon(Icons.arrow_forward_rounded, color: colors.primary,),
+      onTap: (){
+        // TODO: Naavegar otras pantallas
+      },
     );
   }
 }
