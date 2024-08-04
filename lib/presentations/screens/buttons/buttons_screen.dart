@@ -12,9 +12,9 @@ class ButtonsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Button screen'),
       ),
-      body: _ButtonsView(),
+      body: const _ButtonsView(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.arrow_back_rounded),
+        child: const Icon(Icons.arrow_back_rounded),
         onPressed: (){
           context.pop();
         },
@@ -78,10 +78,32 @@ class _ButtonsView extends StatelessWidget {
               backgroundColor: MaterialStatePropertyAll(color.primary),
               iconColor: const MaterialStatePropertyAll(Colors.white),
             ),
-          )
-
-
+          ),
+          CustomButton()
         ],
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
+    return  ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
+            child: Text('Customized', style: TextStyle(color: Colors.white)),
+          ),
+        ),
       ),
     );
   }
