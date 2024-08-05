@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
-import 'package:widgets_app/presentations/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = 'home_screen';
@@ -15,13 +14,13 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Flutter + Material 3'),
         centerTitle: false,
       ),
-      body: _HomeView(),
+      body: const _HomeView(),
     );
   }
 }
 
 class _HomeView extends StatelessWidget {
-  const _HomeView({super.key});
+  const _HomeView();
 
   //appMenuItems
   @override
@@ -39,7 +38,6 @@ class _HomeView extends StatelessWidget {
 
 class _CustomListTile extends StatelessWidget {
   const _CustomListTile({
-    super.key,
     required this.menuItem,
   });
 

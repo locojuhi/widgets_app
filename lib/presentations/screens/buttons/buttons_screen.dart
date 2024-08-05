@@ -24,9 +24,7 @@ class ButtonsScreen extends StatelessWidget {
 }
 
 class _ButtonsView extends StatelessWidget {
-  const _ButtonsView({
-    super.key,
-  });
+  const _ButtonsView();
 
   @override
   Widget build(BuildContext context) {
@@ -75,11 +73,11 @@ class _ButtonsView extends StatelessWidget {
             onPressed: (){},
             icon: const Icon(Icons.app_registration_rounded),
             style: ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(color.primary),
-              iconColor: const MaterialStatePropertyAll(Colors.white),
+              backgroundColor: WidgetStatePropertyAll(color.primary),
+              iconColor: const WidgetStatePropertyAll(Colors.white),
             ),
           ),
-          CustomButton()
+          const CustomButton()
         ],
       ),
     );
