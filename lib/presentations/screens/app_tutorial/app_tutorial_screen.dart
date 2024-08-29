@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 final slides = <Slideinfo>[
   Slideinfo(
       'Busca la comida',
       'Proident eiusmod reprehenderit proident dolore ut dolore labore nostrud id enim.',
-      'assets/image/1.png'),
+      'assets/images/1.png'),
   Slideinfo(
       'Entrega rapida',
       'Occaecat Lorem aliqua esse ad aliquip occaecat labore ipsum qui dolore veniam adipisicing adipisicing.',
-      'assets/image/2.png'),
+      'assets/images/2.png'),
   Slideinfo(
       'Disfruta la comnida',
       'Cupidatat sit ad minim culpa dolor id ut in sit pariatur sit nostrud aliquip in.',
-      'assets/image/3.png'),
+      'assets/images/3.png'),
 ];
 
 class Slideinfo {
@@ -30,16 +31,29 @@ class AppTutorialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        physics: const BouncingScrollPhysics(),
-        children: slides
-            .map(
-              (slideData) => _Slide(
-                  title: slideData.title,
-                  caption: slideData.caption,
-                  imageURL: slideData.imageURL),
-            )
-            .toList(),
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          PageView(
+            physics: const BouncingScrollPhysics(),
+            children: slides
+                .map(
+                  (slideData) => _Slide(
+                      title: slideData.title,
+                      caption: slideData.caption,
+                      imageURL: slideData.imageURL),
+                )
+                .toList(),
+          ),
+          Positioned(
+            right: 10,
+            top: 50,
+            child: TextButton(
+              child: const Text('Salir'),
+              onPressed: () => context.pop(),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -58,6 +72,30 @@ class _Slide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final titleStyle = Theme.of(context).textTheme.titleLarge;
+    final captionStyle = Theme.of(context).textTheme.bodySmall;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image(
+              image: AssetImage(imageURL),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(title),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(caption),
+          ],
+        ),
+      ),
+    );
   }
 }
