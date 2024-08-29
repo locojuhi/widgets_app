@@ -104,15 +104,12 @@ class _Slide extends StatelessWidget {
   final String imageURL;
 
   const _Slide(
-      {super.key,
-      required this.title,
-      required this.caption,
-      required this.imageURL});
+      {required this.title, required this.caption, required this.imageURL});
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = Theme.of(context).textTheme.titleLarge;
-    final captionStyle = Theme.of(context).textTheme.bodySmall;
+    //final titleStyle = Theme.of(context).textTheme.titleLarge;
+    //final captionStyle = Theme.of(context).textTheme.bodySmall;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
