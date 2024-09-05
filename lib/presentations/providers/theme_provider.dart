@@ -5,3 +5,5 @@ final isDarkModeBoolean = StateProvider<bool>((ref) => false);
 
 // Inmutable
 final colorListProvider = Provider((ref) => colorList);
+
+final selectedIndexColorProvider = StateProvider((ref) => 2);
