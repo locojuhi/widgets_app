@@ -54,4 +54,9 @@ const appMenuItems = <MenuItem>[
       subTitle: 'Infinite scroll',
       icon: Icons.list_alt_rounded,
       link: '/infinite'),
+  MenuItem(
+      title: 'Counter screen',
+      subTitle: 'A counter feature',
+      icon: Icons.calculate_outlined,
+      link: '/counter_screen'),
 ];

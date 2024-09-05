@@ -3,6 +3,7 @@ import 'package:widgets_app/presentations/screens/animated/animated_screen.dart'
 import 'package:widgets_app/presentations/screens/app_tutorial/app_tutorial_screen.dart';
 import 'package:widgets_app/presentations/screens/buttons/buttons_screen.dart';
 import 'package:widgets_app/presentations/screens/cards/cards_screen.dart';
+import 'package:widgets_app/presentations/screens/counter/counter_screen.dart';
 import 'package:widgets_app/presentations/screens/home/home_screen.dart';
 import 'package:widgets_app/presentations/screens/infinite_scroll/infinite_scroll_screen.dart';
 import 'package:widgets_app/presentations/screens/progress/progress_screen.dart';
@@ -46,4 +47,8 @@ final appRouter = GoRouter(initialLocation: '/', routes: [
       path: '/infinite',
       name: InfiniteScrollScreen.routeName,
       builder: (context, state) => const InfiniteScrollScreen()),
+  GoRoute(
+      path: '/counter_screen',
+      name: CounterScreen.routeName,
+      builder: (context, state) => const CounterScreen()),
 ]);
