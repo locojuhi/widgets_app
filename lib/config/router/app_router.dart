@@ -8,6 +8,7 @@ import 'package:widgets_app/presentations/screens/home/home_screen.dart';
 import 'package:widgets_app/presentations/screens/infinite_scroll/infinite_scroll_screen.dart';
 import 'package:widgets_app/presentations/screens/progress/progress_screen.dart';
 import 'package:widgets_app/presentations/screens/snackbar/snackbar_screen.dart';
+import 'package:widgets_app/presentations/screens/theme_changer/theme_changer.dart';
 import 'package:widgets_app/presentations/screens/ui_controls/ui_controls_screen.dart';
 
 final appRouter = GoRouter(initialLocation: '/', routes: [
@@ -51,4 +52,8 @@ final appRouter = GoRouter(initialLocation: '/', routes: [
       path: '/counter_screen',
       name: CounterScreen.routeName,
       builder: (context, state) => const CounterScreen()),
+  GoRoute(
+      path: '/theme_changer',
+      name: ThemeChanger.routeName,
+      builder: (context, state) => const ThemeChanger()),
 ]);
